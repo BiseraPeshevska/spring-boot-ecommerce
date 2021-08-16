@@ -14,8 +14,13 @@ public class OrderItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name="o_id")
     private Integer id;
+
+    @ManyToOne
+    @JoinColumn(name="order_id")
+    @PrimaryKeyJoinColumn(name="order_id", referencedColumnName = "id")
+    private Order order; //OrderItem has an order that it is associated with
 
     @Column(name="image_url")
     private String imageUrl;
@@ -29,7 +34,4 @@ public class OrderItem {
     @Column(name="product_id")
     private Integer productId;
 
-    @ManyToOne
-    @JoinColumn(name="order_id")
-    private Order order; //OrderItem has an order that it is associated with
 }
