@@ -40,11 +40,6 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
         // disable HTTP methods for ProductCategory: PUT, POST and DELETE
         disableHttpMethods(ProductCategory.class, config, theUnsupportedActions);
 
-        // disable HTTP methods for Country: PUT, POST and DELETE
-        disableHttpMethods(Country.class, config, theUnsupportedActions);
-
-        // disable HTTP methods for City: PUT, POST and DELETE
-        disableHttpMethods(City.class, config, theUnsupportedActions);
 
         // disable HTTP methods for Order: PUT, POST and DELETE
         disableHttpMethods(Order.class, config, theUnsupportedActions);
