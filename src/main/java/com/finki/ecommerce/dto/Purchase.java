@@ -1,9 +1,6 @@
 package com.finki.ecommerce.dto;
 
-import com.finki.ecommerce.entity.Address;
-import com.finki.ecommerce.entity.Customer;
-import com.finki.ecommerce.entity.Order;
-import com.finki.ecommerce.entity.OrderItem;
+import com.finki.ecommerce.entity.*;
 import lombok.Data;
 
 import java.util.Set;
@@ -15,4 +12,5 @@ public class Purchase {
     private Address billingAddress;
     private Order order;
     private Set<OrderItem> orderItems;
+    private Set<OrderStatus> orderStatuses;
 }

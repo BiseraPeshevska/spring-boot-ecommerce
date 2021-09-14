@@ -3,7 +3,6 @@ package com.finki.ecommerce.entity;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -31,19 +30,15 @@ public class Order {
     @Column(name="total_price")
     private BigDecimal totalPrice;
 
-    @Column(name="status")
-    private String status;
-
     @Column(name="date_created")
     @CreationTimestamp
     private Date dateCreated;
 
-    @Column(name="last_updated")
-    @UpdateTimestamp
-    private Date lastUpdated;
-
     @OneToMany(cascade=CascadeType.ALL, mappedBy = "order")
     private Set<OrderItem> orderItems = new HashSet<>();
+
+    @OneToMany(cascade=CascadeType.ALL, mappedBy = "order")
+    private Set<OrderItem> orderStatuses = new HashSet<>();
 
     @ManyToOne
     @JoinColumn(name="customer_id")

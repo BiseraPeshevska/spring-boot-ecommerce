@@ -15,12 +15,12 @@ public class OrderItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="o_id")
-    private Integer id;
+    private Integer id; // diskriminator
 
     @ManyToOne
     @JoinColumn(name="order_id")
     @PrimaryKeyJoinColumn(name="order_id", referencedColumnName = "id")
-    private Order order; //OrderItem has an order that it is associated with
+    private Order order; //OrderItem is a weak entity. It has an order that it is associated with
 
     @Column(name="image_url")
     private String imageUrl;

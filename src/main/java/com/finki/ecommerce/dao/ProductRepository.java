@@ -15,6 +15,7 @@ public interface ProductRepository extends JpaRepository <Product, Integer> {
     //http://localhost:8080/api/products/search/findByCategoryId?id=1
     Page<Product> findByCategoryId(@RequestParam("id") Integer id, Pageable pageable);
 
-    //http://localhost:8080/api/products/search/findByNameContaining?name=Python
+    //http://localhost:8080/api/products/search/findByNameContaining?name=Vitamnin
     Page<Product> findByNameContaining(@RequestParam("name") String name, Pageable pageable);
+
 }
